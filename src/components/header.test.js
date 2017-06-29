@@ -1,6 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import InfoModal from './info-modal';
+import TopNav from './top-nav';
 
 import {Header} from './header';
 
@@ -18,9 +19,9 @@ describe('<Header />', () => {
     it('Renders TopNav and h1 element', () => {
         const dispatch = jest.fn();
         const wrapper = shallow(<Header showInfoModal={false} dispatch={dispatch} />);
-        //console.log(wrapper);
-        expect(wrapper.find('TopNav').exists()).toEqual(true);
-        expect(wrapper.contains(<h1>HOT or COLD</h1>)).toEqual(true);
+        //console.log(wrapper.debug());
+        expect(wrapper.find(TopNav).exists()).toEqual(true);
+        //expect(wrapper.contains(<h1>HOT or COLD</h1>)).toEqual(true);
     })
 
 
