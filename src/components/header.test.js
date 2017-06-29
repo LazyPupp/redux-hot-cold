@@ -21,7 +21,7 @@ describe('<Header />', () => {
         const wrapper = shallow(<Header showInfoModal={false} dispatch={dispatch} />);
         //console.log(wrapper.debug());
         expect(wrapper.find(TopNav).exists()).toEqual(true);
-        //expect(wrapper.contains(<h1>HOT or COLD</h1>)).toEqual(true);
+        expect(wrapper.contains(<h1>HOT or COLD</h1>)).toEqual(true);
     })
 
 
