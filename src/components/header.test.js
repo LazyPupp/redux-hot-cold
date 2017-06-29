@@ -10,13 +10,17 @@ describe('<Header />', () => {
     });
 
     it('Hides the info modal initially', () => {
-        const wrapper = shallow(<Header />);
+        const dispatch = jest.fn();
+        const wrapper = shallow(<Header showInfoModal={false} dispatch={dispatch}/>);
         expect(wrapper.find('InfoModal').exists()).toEqual(false);
     });
 
     it('Renders TopNav and h1 element', () => {
-        const wrapper = shallow(<Header />);
-        expect(wrapper.find('TopNav').length).toEqual(1);
+        const dispatch = jest.fn();
+        const wrapper = shallow(<Header showInfoModal={false} dispatch={dispatch} />);
+        //console.log(wrapper);
+        expect(wrapper.find('TopNav').exists()).toEqual(true);
+        expect(wrapper.contains(<h1>HOT or COLD</h1>)).toEqual(true);
     })
 
 
